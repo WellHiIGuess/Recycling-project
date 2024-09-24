@@ -37,6 +37,14 @@ server.on('connection', (ws) => {
     });
 });
 
+setInterval(() => { 
+    for (bin in bins) {
+        if (bins[bin].status == 'full') {
+            console.log('Bin at: ' + bins[bin].address + ' is full');
+        }
+    }
+}, 60000); 
+
 // Helper function to generate a unique ID for each bin
 function generateUniqueID() {
     return Math.random().toString(36).substr(2, 9);
