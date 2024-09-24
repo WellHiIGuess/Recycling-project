@@ -60,6 +60,8 @@ async def send_address(file_path):
         # loop
 
         while (True):
+            distance = get_distance()
+
             # Create the message as a JSON object
             message = {
                 'address': address,
